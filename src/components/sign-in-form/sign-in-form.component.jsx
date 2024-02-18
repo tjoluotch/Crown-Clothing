@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import FormInput from "../form-input/form-input.component";
 import Button from "../button/button.component";
@@ -29,19 +29,19 @@ const SignInForm = () => {
   // async await pattern
   const signInWithGoogle = async () => {
     // destructure user json out of the object received
-    const { user } = await signInWithGooglePopup();
-    await createUserDocumentFromAuth(user);
+    // was { user } =
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInAuthUserWithEmailAndPassword(
+      const { user } = await signInAuthUserWithEmailAndPassword(
         email,
         password
       );
-      console.log(response);
+
       resetFormFields();
     } catch (error) {
       if (error.code === "auth/invalid-credential") {
