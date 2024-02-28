@@ -20,10 +20,6 @@ const getButton = (buttonType = BUTTON_TYPE_CLASSES.base) =>
 
 // whatever things we want to put in our button component anywhere in code
 const Button = ({ children, buttonType, ...otherProps }) => {
-  console.log(`Children: ${children}`);
-  console.log(`Button type: ${buttonType}`);
-  console.log(`Other Props: ${otherProps}`);
-  console.log(otherProps);
   const CustomButton = getButton(buttonType);
 
   console.log(CustomButton);

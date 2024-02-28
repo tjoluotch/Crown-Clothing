@@ -19,8 +19,6 @@ const SignInForm = () => {
   //destructuring values
   const { email, password } = formFields;
 
-  console.log(formFields);
-
   const resetFormFields = () => {
     setFormFields(defaultFormFields);
   };
